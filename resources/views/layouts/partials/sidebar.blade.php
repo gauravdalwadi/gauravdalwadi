@@ -2,31 +2,33 @@
     <div class="deznav-scroll">
         <div class="main-profile">
             <div class="image-bx">
-                <img src="images/Untitled-1.jpg" alt="">
+                <img src="https://avatarfiles.alphacoders.com/127/thumb-127272.jpg" alt="">
                 <a href="javascript:void(0);"><i class="fa fa-cog" aria-hidden="true"></i></a>
             </div>
-            <h5 class="name"><span class="font-w400">Hello,</span> Marquez</h5>
-            <p class="email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                    data-cfemail="95f8f4e7e4e0f0efefefefd5f8f4fcf9bbf6faf8">[email&#160;protected]</a></p>
+            <h5 class="name text-capitalize"><span class="font-w400 ">Hello,</span> {{ auth()->user()->first_name }}
+                {{ auth()->user()->last_name }}</h5>
+            <p class="email">
+                {{-- <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                    data-cfemail="95f8f4e7e4e0f0efefefefd5f8f4fcf9bbf6faf8">[email&#160;protected]</a> --}}
+                <a href="mailto:{{ auth()->user()->email }}" >[{{ auth()->user()->email }}]</a>
+            </p>
         </div>
         <ul class="metismenu" id="menu">
             <li class="nav-label first">Main Menu</li>
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <li>
+                <a href="{{route('home')}}" aria-expanded="false">
                     <i class="flaticon-144-layout"></i>
                     <span class="nav-text">Dashboard</span>
                 </a>
-                <ul aria-expanded="false">
-                    <li><a href="index.html">Dashboard Light</a></li>
-                    <li><a href="index-2.html">Dashboard Dark</a></li>
-                    <li><a href="my-wallets.html">Wallet</a></li>
-                    <li><a href="tranasactions.html">Transactions</a></li>
-                    <li><a href="coin-details.html">Coin Details</a></li>
-                    <li><a href="portofolio.html">Portofolio</a></li>
-                    <li><a href="market-capital.html">Market Capital</a></li>
-                </ul>
-
             </li>
-            <li class="nav-label">Apps</li>
+            <li class="nav-label">Personal</li>
+            <li>
+                <a href="{{route('profile')}}" aria-expanded="false">
+                    <i class="  -144-layout"></i>
+                    <span class="nav-text">Profile</span>
+                </a>
+            </li>
+            {{-- <li class="nav-label">Apps</li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-077-menu-1"></i>
                     <span class="nav-text">Apps</span>
@@ -77,13 +79,13 @@
                         </ul>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
 
 
         </ul>
         <div class="copyright">
-            <p><strong>Admin </strong> © 2022 All Rights Reserved</p>
-            <p class="fs-12">Made with <span class="heart"></span> by Gaurav Dalwadi</p>
+            {{-- <p><strong>{{ config('app.name') }}</strong> © 2022 All Rights Reserved</p> --}}
+            <p class="fs-12">Made with <i class="fa-solid fa-heart"></i> by {{ config('app.name') }} </p>
         </div>
     </div>
 </div>

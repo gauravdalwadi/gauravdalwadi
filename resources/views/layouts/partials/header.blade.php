@@ -39,7 +39,7 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="nav-item dropdown notification_dropdown">
+                    {{-- <li class="nav-item dropdown notification_dropdown">
                         <a class="nav-link  ai-icon" href="javascript:void(0)" role="button" data-toggle="dropdown">
                             <svg class="bell-icon" width="24" height="24" viewbox="0 0 28 28" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -211,12 +211,12 @@
                                 </ul>
                             </div>
                         </div>
-                    </li>
+                    </li> --}}
                     <li class="nav-item dropdown header-profile">
                         <a class="nav-link" href="#" role="button" data-toggle="dropdown">
-                            <img src="images/profile/pic1.jpg" width="20" alt="">
+                            <img src="https://avatarfiles.alphacoders.com/127/thumb-127272.jpg" width="20" alt="">
                             <div class="header-info">
-                                <span>Johndoe</span>
+                                <span class="text-capitalize">{{ auth()->user()->first_name }}</span>
                                 <small>Super Admin</small>
                             </div>
                         </a>
@@ -267,16 +267,16 @@
             </div>
         </nav>
 
-        {{-- <div class="sub-header">
+        <div class="sub-header">
             <div class="d-flex align-items-center flex-wrap mr-auto">
                 <h5 class="dashboard_bar">Dashboard</h5>
             </div>
-            <div class="d-flex align-items-center">
+            {{-- <div class="d-flex align-items-center">
                 <a href="javascript:void(0);" class="btn btn-xs btn-primary light mr-1">Today</a>
                 <a href="javascript:void(0);" class="btn btn-xs btn-primary light mr-1">Month</a>
                 <a href="javascript:void(0);" class="btn btn-xs btn-primary light">Year</a>
-            </div>
-        </div> --}}
+            </div> --}}
+        </div>
 
     </div>
 </div>

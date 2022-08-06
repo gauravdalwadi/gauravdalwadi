@@ -13,6 +13,8 @@
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -65,6 +67,10 @@
                     <a href="#contact" class="nav-link scrollto">
                         <i class="bx bx-envelope"></i> <span>Contact</span></a>
                 </li>
+                <li>
+                    <a href="{{route('login')}}" class="nav-link scrollto">
+                        <i class="bx bx-log-in-circle"></i> <span>Login</span></a>
+                </li>
             </ul>
         </nav><!-- .nav-menu -->
 
@@ -103,7 +109,8 @@
                         <img src="assets/img/profile-img.jpg" class="img-fluid rounded" alt="">
                     </div>
                     <div class="col-lg-8 pt-4 pt-lg-0 content">
-                        <h3>UI/UX Designer &amp; Web Developer.</h3>
+                        {{-- <h3>UI/UX Designer &amp; Web Developer.</h3> --}}
+                        <h3>Software &amp; Web Developer.</h3>
                         <p class="fst-italic">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore
@@ -135,7 +142,8 @@
                                         <span>Computer Science Engineer</span>
                                     </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong>
-                                        <span><a href="mailto:gaurav.dalwadi@gmail.com">gaurav.dalwadi@gmail.com</a></span>
+                                        <span><a
+                                                href="mailto:gaurav.dalwadi@gmail.com">gaurav.dalwadi@gmail.com</a></span>
                                     </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong>
                                         <span>Available</span>
@@ -862,19 +870,19 @@
                             <div class="address">
                                 <i class="bi bi-geo-alt"></i>
                                 <h4>Location:</h4>
-                                <p>A108 Adam Street, New York, NY 535022</p>
+                                <p>Vadodara, Gujarat, India</p>
                             </div>
 
                             <div class="email">
                                 <i class="bi bi-envelope"></i>
                                 <h4>Email:</h4>
-                                <p>info@example.com</p>
+                                <p>gaurav.dalwadi@gmail.com</p>
                             </div>
 
                             <div class="phone">
                                 <i class="bi bi-phone"></i>
                                 <h4>Call:</h4>
-                                <p>+1 5589 55488 55s</p>
+                                <p>+91 9033628778</p>
                             </div>
 
                         </div>
@@ -883,23 +891,44 @@
 
                     <div class="col-lg-8 mt-5 mt-lg-0">
 
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form method="POST" action="{{ route('contact.us.store') }}" id="contactUSForm"
+                            role="form" class="php-email-form">
                             <div class="row">
                                 <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Your Name" required>
+                                    <input type="text" name="name" class="form-control" id="nameId"
+                                        placeholder="Name" value="" placeholder="Your Name"
+                                        required>
+
+                                    <span class="text-danger small" id="nameErrorMsg"></span>
                                 </div>
                                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Your Email" required>
+                                    <input type="text" name="email" id="emailId" class="form-control"
+                                        placeholder="Email" value="" placeholder="Your Email"
+                                        required>
+
+                                    <span class="text-danger small" id="emailErrorMsg"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group mt-3">
+                                    <input type="text" name="subject" id="subjectId" class="form-control"
+                                        placeholder="Subject" value="" placeholder="Subject"
+                                        required>
+
+                                    <span class="text-danger small" id="subjectErrorMsg"></span>
+                                </div>
+                                <div class="col-md-6 form-group mt-3">
+                                    <input type="text" name="phone" id="phoneId" class="form-control"
+                                        placeholder="Phone" value="" placeholder="Phone"
+                                        required>
+
+                                    <span class="text-danger small" id="phoneErrorMsg"></span>
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="subject" id="subject"
-                                    placeholder="Subject" required>
-                            </div>
-                            <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                                <textarea name="message" id="messageId" class="form-control" rows="5" placeholder="Message" required></textarea>
+
+                                <span class="text-danger small" id="messageErrorMsg"></span>
                             </div>
                             <div class="my-3">
                                 <div class="loading">Loading</div>
@@ -922,8 +951,7 @@
     <footer id="footer">
         <div class="container">
             <h3>Gaurav Dalwadi</h3>
-            <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi
-                placeat.</p>
+            <p>Build your life on your dreams; because dreams never have bad endings.</p>
             <div class="social-links">
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -950,11 +978,121 @@
     <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/typed.js/typed.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/waypoints/noframework.waypoints.js') }}"></script>
-    <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
+    <script src="{{ asset('admin/vendor/global/global.min.js') }}"></script>
+    {{-- <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script> --}}
     <script src="{{ asset('assets/vendor/particles/particles.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script>
+        $("#contactUSForm").validate({
+            rules: {
+                name: "required",
+                email: {
+                    required: true,
+                    email: true
+                },
+                phone: {
+                    required: true,
+                    phoneUS: true
+                },
+                subject: {
+                    required: true,
+                },
+                message: {
+                    required: true,
+                    minlength: 15,
+                }
+            },
+            messages: {
+                name: "Please enter your name",
+                email: "Please enter a valid email address",
+                phone: {
+                    required: "Please enter phone number",
+                    minlength: "Please enter valid phone number "
+                },
+                subject: {
+                    required: "Please enter a subject",
+                },
+                message: {
+                    required: "Please enter a message",
+                    minlength: "Your message must be at least 15 characters long"
+                }
+            },
+            errorElement: "span",
+            errorClass: "text-danger small",
+            // errorPlacement: function(error, element) {
+            //     error.addClass("text-danger small");
+            // },
+            success: function(label, element) {
+
+            },
+            highlight: function(element, errorClass, validClass) {
+                $(element).addClass("is-invalid").removeClass("is-valid");
+            },
+            unhighlight: function(element, errorClass, validClass) {
+                $(element).addClass("is-valid").removeClass("is-invalid");
+            },
+            submitHandler: function(form, e) {
+                e.preventDefault();
+                // var formData = new FormData($(form)[0]);
+                var form = form;
+
+                var name = $("#nameId").val();
+                var email = $("#emailId").val();
+                var phone = $("#phoneId").val();
+                var subject = $("#subjectId").val();
+                var message = $("#messageId").val();
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    url: "{{ route('contact.us.store') }}",
+                    type: "POST",
+                    data: {
+                        name: name,
+                        email: email,
+                        phone: phone,
+                        subject: subject,
+                        message: message
+                    },
+                    beforeSend: function() {
+                        form.querySelector('.loading').classList.add('d-block');
+                        form.querySelector('.error-message').classList.remove('d-block');
+                        form.querySelector('.sent-message').classList.remove('d-block');
+                    },
+                    success: function(response) {
+                        form.querySelector('.sent-message').classList.add('d-block');
+                        console.log(response);
+                    },
+                    error: function(response) {
+                        form.querySelector('.error-message').innerHTML = "Check inputs!!";
+                        form.querySelector('.error-message').classList.add('d-block');
+                        $('#nameErrorMsg').text(response.responseJSON.errors.name);
+                        $('#emailErrorMsg').text(response.responseJSON.errors.email);
+                        $('#subjectErrorMsg').text(response.responseJSON.errors.subject);
+                        $('#phoneErrorMsg').text(response.responseJSON.errors.phone);
+                        $('#messageErrorMsg').text(response.responseJSON.errors.message);
+                    },
+                    complete: function() {
+                        // $('#sent-message').show();
+                        form.querySelector('.loading').classList.remove('d-block');
+                    },
+                });
+            }
+        });
+
+        // $('#contactUSForm').on('submit', function(e) {
+
+
+        // });
+    </script>
+
 
 </body>
 

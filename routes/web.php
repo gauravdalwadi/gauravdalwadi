@@ -44,3 +44,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
+
+//to submit contact forms
+Route::post('contact-us', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.us.store');

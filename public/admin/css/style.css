@@ -5,7 +5,7 @@
     Name                 : Zenix
     Author               : DexignZone
     Author Portfolio     : https://themeforest.net/user/dexignzone/portfolio
-    
+
 
 
     Table of Sass Contents
@@ -17,7 +17,7 @@
         _mixin
         _variable
 
-    2. bootstrap 
+    2. bootstrap
         -Here goes all official bootstrap scss files
 
     3. Global/Base
@@ -20264,7 +20264,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   border: none;
   overflow: hidden; }
 
-/* 
+/*
 svg text {
     font-weight: 600 !important;
 } */
@@ -20877,7 +20877,8 @@ input[type="checkbox"]:checked:after {
 
 .form-control.is-invalid {
   border-color: #FF4C41 !important;
-  border-right: 0px !important; }
+  /* border-right: 0px !important;  */
+}
   .form-control.is-invalid:focus {
     box-shadow: none; }
 
@@ -26533,7 +26534,7 @@ table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.
     margin-bottom: -130px;
 	background-size:cover;
 	&>div{
-		
+
 	}
 } */
 .plus-icon {
