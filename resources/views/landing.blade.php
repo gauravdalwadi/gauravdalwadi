@@ -67,10 +67,10 @@
                     <a href="#contact" class="nav-link scrollto">
                         <i class="bx bx-envelope"></i> <span>Contact</span></a>
                 </li>
-                <li>
-                    <a href="{{route('login')}}" class="nav-link scrollto">
+                {{-- <li>
+                    <a href="{{ route('login') }}" class="nav-link scrollto">
                         <i class="bx bx-log-in-circle"></i> <span>Login</span></a>
-                </li>
+                </li> --}}
             </ul>
         </nav><!-- .nav-menu -->
 
@@ -112,9 +112,9 @@
                         {{-- <h3>UI/UX Designer &amp; Web Developer.</h3> --}}
                         <h3>Software &amp; Web Developer.</h3>
                         <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            {{-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore
-                            magna aliqua.
+                            magna aliqua. --}}
                         </p>
                         <div class="row">
                             <div class="col-lg-6">
@@ -142,21 +142,22 @@
                                         <span>Computer Science Engineer</span>
                                     </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong>
-                                        <span><a
-                                                href="mailto:gaurav.dalwadi@gmail.com">gaurav.dalwadi@gmail.com</a></span>
+                                        <span>
+                                            <a href="mailto:gaurav.dalwadi@gmail.com">codes.by.gd@gmail.com</a>
+                                        </span>
                                     </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong>
-                                        <span>Available</span>
+                                        <span>Not Available</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <p>
-                            Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt
+                            {{-- Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt
                             adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
                             Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus
                             itaque neque. Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis
-                            culpa magni laudantium dolores.
+                            culpa magni laudantium dolores. --}}
                         </p>
                     </div>
                 </div>
@@ -896,15 +897,13 @@
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <input type="text" name="name" class="form-control" id="nameId"
-                                        placeholder="Name" value="" placeholder="Your Name"
-                                        required>
+                                        placeholder="Name" value="" placeholder="Your Name" required>
 
                                     <span class="text-danger small" id="nameErrorMsg"></span>
                                 </div>
                                 <div class="col-md-6 form-group mt-3 mt-md-0">
                                     <input type="text" name="email" id="emailId" class="form-control"
-                                        placeholder="Email" value="" placeholder="Your Email"
-                                        required>
+                                        placeholder="Email" value="" placeholder="Your Email" required>
 
                                     <span class="text-danger small" id="emailErrorMsg"></span>
                                 </div>
@@ -912,15 +911,13 @@
                             <div class="row">
                                 <div class="col-md-6 form-group mt-3">
                                     <input type="text" name="subject" id="subjectId" class="form-control"
-                                        placeholder="Subject" value="" placeholder="Subject"
-                                        required>
+                                        placeholder="Subject" value="" placeholder="Subject" required>
 
                                     <span class="text-danger small" id="subjectErrorMsg"></span>
                                 </div>
                                 <div class="col-md-6 form-group mt-3">
                                     <input type="text" name="phone" id="phoneId" class="form-control"
-                                        placeholder="Phone" value="" placeholder="Phone"
-                                        required>
+                                        placeholder="Phone" value="" placeholder="Phone" required>
 
                                     <span class="text-danger small" id="phoneErrorMsg"></span>
                                 </div>
