@@ -28,6 +28,12 @@
     <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
+    {{-- <link href="{{ asset('assets/vendor/splide-4.1.3/dist/css/splide-core.min.css') }}" rel="stylesheet"> --}}
+    {{-- <link href="{{ asset('assets/vendor/splide-4.1.3/dist/css/splide.min.css') }}" rel="stylesheet"> --}}
+    {{-- <link href="{{ asset('assets/vendor/splide-4.1.3/dist/css/themes/splide-default.min.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('assets/vendor/splide-4.1.3/dist/css/themes/splide-sea-green.min.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('assets/vendor/splide-4.1.3/dist/css/themes/splide-skyblue.min.css') }}" rel="stylesheet"> --}}
+
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
@@ -856,6 +862,48 @@
         </section>
         <!-- End Testimonials Section --> --}}
 
+
+        <!-- ======= Instagram Section ======= -->
+        <section id="Instafeed" class="Instafeed section-bg">
+            <div class="" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Insta feed</h2>
+                </div>
+                <div id="splide" class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+
+
+                            @foreach ($instagram_feed as $post)
+                                <img src={{ $post->url }} alt="A post from my instagram">
+                                <li class="splide__slide">
+                                    <img src="{{ $post->url }}">
+                                </li>
+                            @endforeach
+
+{{--
+                            <li class="splide__slide"><img
+                                    src="https://brandontran.com/images/cardboard-castle-5.jpg"></li>
+                            <li class="splide__slide"><img
+                                    src="https://brandontran.com/images/cardboard-castle-4.jpg"></li>
+                            <li class="splide__slide"><img
+                                    src="https://brandontran.com/images/cardboard-castle-3.jpg"></li> --}}
+                        </ul>
+                    </div>
+                    <!-- Add the progress bar element -->
+                    <div class="my-carousel-progress">
+                        <div class="my-carousel-progress-bar"></div>
+                    </div>
+                </div>
+
+        </section>
+
+        @foreach ($instagram_feed as $post)
+            <img src={{ $post->url }} alt="A post from my instagram">
+        @endforeach
+        </div>
+        </section><!-- End Instagram Section -->
+
         <!-- ======= Contact Section ======= -->
         <section id="contact" class="contact">
             <div class="container" data-aos="fade-up">
@@ -940,12 +988,15 @@
                 </div>
 
             </div>
+
+
         </section><!-- End Contact Section -->
 
+
+
     </main><!-- End #main -->
-    @foreach($instagram_feed as $post)
-        <img src={{ $post->url }} alt="A post from my instagram">
-    @endforeach
+
+
     <!-- ======= Footer ======= -->
     <footer id="footer">
         <div class="container">
@@ -980,6 +1031,7 @@
     <script src="{{ asset('admin/vendor/global/global.min.js') }}"></script>
     {{-- <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script> --}}
     <script src="{{ asset('assets/vendor/particles/particles.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/splide-4.1.3/dist/js/splide.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
 
@@ -1090,6 +1142,35 @@
 
 
         // });
+
+        var splide = new Splide('.splide', {
+            type: 'loop',
+            perPage: 3,
+            snap: true,
+            autoplay: true,
+            speed: 1000,
+            interval: 5000,
+            // gap: '0em',
+            focus: 'center',
+            mediaQuery: 'max',
+            resetProgress: true,
+            breakpoints: {
+                640: {
+                    perPage: 1,
+                },
+            }
+            // padding: '30%',
+        });
+        var bar = splide.root.querySelector('.my-carousel-progress-bar');
+
+        // Updates the bar width whenever the carousel moves:
+        splide.on('mounted move', function() {
+            var end = splide.Components.Controller.getEnd() + 1;
+            var rate = Math.min((splide.index + 1) / end, 1);
+            bar.style.width = String(100 * rate) + '%';
+        });
+
+        splide.mount();
     </script>
 
 
