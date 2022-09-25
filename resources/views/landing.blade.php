@@ -875,7 +875,7 @@
 
 
                             @foreach ($instagram_feed as $post)
-                                <img src={{ $post->url }} alt="A post from my instagram">
+                                {{-- <img src={{ $post->url }} alt="A post from my instagram"> --}}
                                 <li class="splide__slide">
                                     <img src="{{ $post->url }}">
                                 </li>
