@@ -17,9 +17,15 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('landing');
-});
+// Route::get('/', function () {
+//     return view('landing');
+// });
+Route::get('/',[App\Http\Controllers\PortfolioController::class, 'index'])->name('home');
+Route::get('instagram-get-auth', [App\Http\Controllers\InstagramAuthController::class, 'show']);
+// Route::get('instagram-get-auth', 'InstagramAuthController@show');
+Route::get('instagram-auth-response', [App\Http\Controllers\InstagramAuthController::class, 'complete']);
+// Route::get('instagram-auth-response', 'InstagramAuthController@complete');
+
 
 
 //admin panel

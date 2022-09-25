@@ -1,0 +1,45 @@
+instagram activation
+
+
+https://api.instagram.com/oauth/authorize
+  ?client_id=550663900191038
+  &redirect_uri=https://www.gauravdalwadi.in/
+  &scope=user_profile,user_media
+  &response_type=code
+
+
+
+ https://www.gauravdalwadi.in/?code=AQA2jfS-XAjynXFYbd_ZqFIk_ioNiJ4t13uurLs2OE3DzmN1yXTF-WgdXIApzHt3TLAof0VAjRqDh_1wxWvMFdrm8METJWhNh-MX_E_m03yh2SCc4ouknm7gMsAjmjoHUGkqK9ylG6coKFzbsbjWgQ35yVl7_UciahPSPThwLidKSOzEXdLC6J9H5Wf6dHmREtuhw8QGPA52nxAox7GrhMguk3KMdXRzL4rpWnbliBdBHQ#_
+
+
+curl -X POST \
+  https://api.instagram.com/oauth/access_token \
+  -F client_id=550663900191038 \
+  -F client_secret=351d7cbcc07e05a6299dbb9c9f473c02 \
+  -F grant_type=authorization_code \
+  -F redirect_uri=https://www.gauravdalwadi.in/ \
+  -F code=AQA2jfS-XAjynXFYbd_ZqFIk_ioNiJ4t13uurLs2OE3DzmN1yXTF-WgdXIApzHt3TLAof0VAjRqDh_1wxWvMFdrm8METJWhNh-MX_E_m03yh2SCc4ouknm7gMsAjmjoHUGkqK9ylG6coKFzbsbjWgQ35yVl7_UciahPSPThwLidKSOzEXdLC6J9H5Wf6dHmREtuhw8QGPA52nxAox7GrhMguk3KMdXRzL4rpWnbliBdBHQ
+
+
+{"access_token": "IGQVJVTUZA2UmRJZAVZARSkFybk4tanhOUXJ0X3RvNHJQem5qdDZAPWVlGZAExlVXhQY1p5Smh3cFJxXzBxSl9iemZAWMFRRNGdiSXFRR015SmdUOElsVGZAka2ZAGQ1VDcGNxYVFlbF84d1ZACOUczNEZA3U1Q3VVhhMGxUTEJyQmZAN", "user_id": 17841454844959267}
+
+
+
+curl -X GET \
+  'https://graph.instagram.com/17841454844959267?fields=id,username&access_token=IGQVJVTUZA2UmRJZAVZARSkFybk4tanhOUXJ0X3RvNHJQem5qdDZAPWVlGZAExlVXhQY1p5Smh3cFJxXzBxSl9iemZAWMFRRNGdiSXFRR015SmdUOElsVGZAka2ZAGQ1VDcGNxYVFlbF84d1ZACOUczNEZA3U1Q3VVhhMGxUTEJyQmZAN'
+
+
+{"id":"8044344848940600","username":"codes.by.gd"}
+
+
+
+
+
+
+http://127.0.0.1:8000/instagram/auth/callback/
+http://localhost/instagram/auth/callback
+
+http://127.0.0.1:8000/instagram-auth-success
+http://127.0.0.1:8000/instagram-auth-failure
+
+instagram-auth-response?result=success
