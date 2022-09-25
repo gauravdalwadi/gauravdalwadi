@@ -875,14 +875,12 @@
 
 
                             @foreach ($instagram_feed as $post)
-                                {{-- <img src={{ $post->url }} alt="A post from my instagram"> --}}
                                 <li class="splide__slide">
                                     <img src="{{ $post->url }}">
                                 </li>
                             @endforeach
 
-{{--
-                            <li class="splide__slide"><img
+                            {{-- <li class="splide__slide"><img
                                     src="https://brandontran.com/images/cardboard-castle-5.jpg"></li>
                             <li class="splide__slide"><img
                                     src="https://brandontran.com/images/cardboard-castle-4.jpg"></li>
@@ -898,9 +896,6 @@
 
         </section>
 
-        @foreach ($instagram_feed as $post)
-            <img src={{ $post->url }} alt="A post from my instagram">
-        @endforeach
         </div>
         </section><!-- End Instagram Section -->
 
@@ -1145,7 +1140,7 @@
 
         var splide = new Splide('.splide', {
             type: 'loop',
-            perPage: 3,
+            perPage: 5,
             snap: true,
             autoplay: true,
             speed: 1000,
