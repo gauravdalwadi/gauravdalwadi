@@ -943,7 +943,9 @@
         </section><!-- End Contact Section -->
 
     </main><!-- End #main -->
-
+    @foreach($instagram_feed as $post)
+        <img src={{ $post->url }} alt="A post from my instagram">
+    @endforeach
     <!-- ======= Footer ======= -->
     <footer id="footer">
         <div class="container">
