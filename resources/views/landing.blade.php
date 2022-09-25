@@ -867,7 +867,7 @@
         <section id="Instafeed" class="Instafeed section-bg">
             <div class="" data-aos="fade-up">
                 <div class="section-title">
-                    <h2>Insta feed</h2>
+                    <h2>Instagram feed</h2>
                 </div>
                 <div id="splide" class="splide">
                     <div class="splide__track">
