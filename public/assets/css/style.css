@@ -1251,9 +1251,9 @@ section {
 
 
 /* --------------------------- */
- .splide {
+ /* .splide {
     padding: 20px 0;
-}
+} */
 
 
 .splide__slide img {
@@ -1300,7 +1300,7 @@ section {
 }
 
 .my-carousel-progress {
-    margin-top: 10px;
+    margin-top: 5px;
     background: #ccc;
 }
 
