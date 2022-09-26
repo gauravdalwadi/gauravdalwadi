@@ -1151,7 +1151,7 @@
 
         var splide = new Splide('.splide', {
             type: 'loop',
-            perPage: 5,
+            perPage: 4,
             snap: true,
             autoplay: true,
             speed: 1000,
