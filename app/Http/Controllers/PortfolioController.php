@@ -14,20 +14,16 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-          // return view('landing');
-        // $profile = \Dymantic\InstagramFeed\Profile::where('username', 'codesbygdinsta')->first();
-
-
-
-        // $feed = \Dymantic\InstagramFeed\Profile::where('username', 'codesbygdinsta')->first()->feed();
-        // dd($feed);
-
-        $profile = \Dymantic\InstagramFeed\Profile::for('codesbygdinsta');
-        $feed = $profile?->feed();
+        $feed = $this->getInstagramFeed(10);
         return view('landing', ['instagram_feed' => $feed]);
     }
-    public function getInstagramFeed(){
+
+    public static function getInstagramFeed($feedCount){
+        // $profile = \Dymantic\InstagramFeed\Profile::where('username', 'codesbygdinsta')->first();
+        // $feed = \Dymantic\InstagramFeed\Profile::where('username', 'codesbygdinsta')->first()->feed();
+
         $profile = \Dymantic\InstagramFeed\Profile::for('codesbygdinsta');
-        $feed = $profile?->feed();
+        $feed = $profile?->feed($feedCount);
+        return $feed;
     }
 }

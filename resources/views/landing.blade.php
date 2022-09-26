@@ -70,6 +70,10 @@
                         <i class="bx bx-server"></i> <span>Services</span></a>
                 </li> --}}
                 <li>
+                    <a href="#Instafeed" class="nav-link scrollto">
+                        <i class='bx bxl-instagram'></i> <span>Instagram</span></a>
+                </li>
+                <li>
                     <a href="#contact" class="nav-link scrollto">
                         <i class="bx bx-envelope"></i> <span>Contact</span></a>
                 </li>
@@ -88,16 +92,20 @@
             <h1>Gaurav Dalwadi</h1>
             <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, coder"></span></p>
             <div class="social-links">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://twitter.com/codes_by_gd" class="twitter" target="_blank"><i
+                        class="bx bxl-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100085277888465" class="facebook" target="_blank"><i
+                        class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/codes.by.gd/" class="instagram" target="_blank"><i
+                        class="bx bxl-instagram"></i></a>
+                {{-- <a href="#" class="google-plus" target="_blank"><i class="bx bxl-skype"></i></a> --}}
+                <a href="https://www.linkedin.com/in/gauravdalwadi/" class="linkedin" target="_blank"><i
+                        class="bx bxl-linkedin"></i></a>
             </div>
         </div>
     </section><!-- End Hero -->
 
-    <main id="main">
+    <main id="main" class="px-2">
 
         <!-- ======= About Section ======= -->
         <section id="about" class="about">
@@ -907,9 +915,8 @@
                     <h2>Contact</h2>
                 </div>
 
-                <div class="row mt-1">
-
-                    <div class="col-lg-4">
+                <div class="row mt-1 px-2">
+                    <div class="col-md-4 order-5 mt-5 mt-lg-0">
                         <div class="info">
                             <div class="address">
                                 <i class="bi bi-geo-alt"></i>
@@ -920,7 +927,7 @@
                             <div class="email">
                                 <i class="bi bi-envelope"></i>
                                 <h4>Email:</h4>
-                                <p>gaurav.dalwadi@gmail.com</p>
+                                <p>codes.by.gd@gmail.com</p>
                             </div>
 
                             <div class="phone">
@@ -933,7 +940,7 @@
 
                     </div>
 
-                    <div class="col-lg-8 mt-5 mt-lg-0">
+                    <div class="col-md-8 px-3 order-1">
 
                         <form method="POST" action="{{ route('contact.us.store') }}" id="contactUSForm"
                             role="form" class="php-email-form">
@@ -998,11 +1005,15 @@
             <h3>Gaurav Dalwadi</h3>
             <p>Build your life on your dreams; because dreams never have bad endings.</p>
             <div class="social-links">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://twitter.com/codes_by_gd" class="twitter" target="_blank"><i
+                        class="bx bxl-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100085277888465" class="facebook" target="_blank"><i
+                        class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/codes.by.gd/" class="instagram"><i
+                        class="bx bxl-instagram"></i></a>
+                {{-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> --}}
+                <a href="https://www.linkedin.com/in/gauravdalwadi/" class="linkedin" target="_blank"><i
+                        class="bx bxl-linkedin"></i></a>
             </div>
             <div class="copyright">
                 &copy; Copyright <strong><span>Gaurav Dalwadi</span></strong>. All Rights Reserved
