@@ -1251,7 +1251,7 @@ section {
 
 
 /* --------------------------- */
- /* .splide {
+/* .splide {
     padding: 20px 0;
 } */
 
@@ -1263,7 +1263,7 @@ section {
     transition: transform 400ms;
     transform: scale(0.9);
     transform-origin: center center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(61, 61, 61, 0.2), 0 6px 20px 0 rgba(73, 73, 73, 0.19);
 }
 
 .splide__slide.is-active img {
@@ -1300,7 +1300,7 @@ section {
 }
 
 .my-carousel-progress {
-    margin-top: 5px;
+    margin-top: 1px;
     background: #ccc;
 }
 
@@ -1313,4 +1313,8 @@ section {
 
 .splide__pagination__page.is-active {
     background: #0563bb;
+}
+
+.splide__track {
+    padding-bottom: 10px;
 }
