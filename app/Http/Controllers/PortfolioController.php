@@ -14,11 +14,16 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        $feed = $this->getInstagramFeed(10);
-        return view('landing', ['instagram_feed' => $feed]);
+        if (config('app.env') == 'production') {
+            $feed = $this->getInstagramFeed(10);
+            return view('landing', ['instagram_feed' => $feed]);
+        } else {
+            return view('landing');
+        }
     }
 
-    public static function getInstagramFeed($feedCount){
+    public static function getInstagramFeed($feedCount)
+    {
         // $profile = \Dymantic\InstagramFeed\Profile::where('username', 'codesbygdinsta')->first();
         // $feed = \Dymantic\InstagramFeed\Profile::where('username', 'codesbygdinsta')->first()->feed();
 

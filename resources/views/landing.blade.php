@@ -881,13 +881,13 @@
                     <div class="splide__track">
                         <ul class="splide__list">
 
-
-                            @foreach ($instagram_feed as $post)
-                                <li class="splide__slide">
-                                    <img src="{{ $post->url }}">
-                                </li>
-                            @endforeach
-
+                            @production
+                                @foreach ($instagram_feed as $post)
+                                    <li class="splide__slide">
+                                        <img src="{{ $post->url }}">
+                                    </li>
+                                @endforeach
+                            @endproduction
                             {{-- <li class="splide__slide"><img
                                     src="https://brandontran.com/images/cardboard-castle-5.jpg"></li>
                             <li class="splide__slide"><img
