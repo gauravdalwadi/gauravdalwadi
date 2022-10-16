@@ -10,8 +10,10 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    {{-- <link href="assets/img/favicon.png" rel="icon"> --}}
+    <link href="{{ asset('assets/img/GauravDalwadiIcon.svg') }}" rel="icon">
+    {{-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> --}}
+    <link href="{{ asset('assets/img/GauravDalwadiIcon.svg') }}" rel="apple-touch-icon">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 

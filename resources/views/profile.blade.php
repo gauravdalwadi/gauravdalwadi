@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('pageName','Profile')
 
 @push('head-scripts')
 @endpush
